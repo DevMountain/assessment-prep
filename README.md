@@ -55,3 +55,7 @@ Before you take an assessment, read up here and make sure that you understand al
 + Create an **endpoint** to retrieve data.
 + Use the four rest methods: **GET, POST, PUT/PATCH, and DELETE**.
 + Create endpoints that can use **queries** and **params**.
+
+## SQL
+
+*Coming soon*
