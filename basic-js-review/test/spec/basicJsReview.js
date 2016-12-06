@@ -56,13 +56,13 @@ describe('review', function () {
       aThroughD = aThroughD.map(function(value) {
         return value.toLowerCase();
       });
-      expect(aThroughD.includes('c')).toBe('false')
+      expect(aThroughD.includes('c')).toBe(false)
     })
     it('should include cat', function () {
       aThroughD = aThroughD.map(function(value) {
         return value.toLowerCase();
       });
-      expect(aThroughD.includes('cat')).toBe('true')
+      expect(aThroughD.includes('cat')).toBe(true)
     })
     it('should have cat where c was', function () {
       aThroughD = aThroughD.map(function(value) {
@@ -77,7 +77,7 @@ describe('review', function () {
       expect(isForApple).toEqual(jasmine.any(String));
     })
     it('should equal a', function () {
-      expect(isForApple.toLowerCase()).toEqual('apple');
+      expect(isForApple.toLowerCase()).toEqual('a');
     })
   })
   describe('bestFruit', function () {
@@ -126,11 +126,15 @@ describe('review', function () {
 		it('should exist', function () {
 			expect(numChecker).toBeDefined();
 		});
-		it('should remove every instance of string from array', function () {
-      expect(numChecker(['a', 'b', 'c'], 'a')).toEqual(['b', 'c'])
-      expect(numChecker(['a', 'a', 'c'], 'a')).toEqual(['c'])
-			expect(numChecker(['a', 'a', 'a'], 'a')).toEqual([])
+		it('should return true with a number', function () {
+      expect(numChecker(1)).toBe(true)
+      expect(numChecker(1.4)).toBe(true)
+      expect(numChecker('a')).toBe(false)
 		});
+    it('should return true with a number as a string', function () {
+      expect(numChecker('3')).toEqual(true)
+      expect(numChecker('23.4')).toEqual(true)
+    })
 	});
 
 	describe('rightNow', function () {
@@ -145,13 +149,17 @@ describe('review', function () {
 
 
 	describe('whoAmI', function () {
+    var one = {name:'Shauna'}, two = {skills: 'ninja fighting'},
+        three = {name: undefined}, four = {name: 'Diego'}
 		it('should exist', function () {
 			expect(whoAmI).toBeDefined();
 		});
-		it('should return "has amnesia" if name undefined', function () {
-      var one = {name:'Shauna'}, two = {skills: 'ninja fighting'},
-          three = {name: undefined}
+    it('should return the name if name defined', function () {
       expect(whoAmI(one)).toEqual('Shauna');
+      expect(whoAmI(four)).toEqual('Diego');
+
+    })
+		it('should return "has amnesia" if name undefined', function () {
       expect(whoAmI(two)).toEqual('has amnesia');
 			expect(whoAmI(three)).toEqual('has amnesia');
 		});
