@@ -51,7 +51,8 @@ var ans5 = '';
 ///Context///
 
 //7. Inside contextIt, inkoke myFn with its context set explicitly
-/////to the contextObj, and with the two parameters passed in.
+/////to the contextObj, and with the two parameters passed in - return
+/////the result.
 function contextIt(myFn, contextObj, param1, param2) {
 
 }
@@ -89,12 +90,15 @@ var bubbles = 0; //Ignore this line except to mourn our lack of bubbles.
 /////and returns a function that takes in a greeting and returns
 /////the name and the greeting concatenated together (in that order)
 
+
 //13. Write a function called countdownMaker which takes in an
 /////event name (string) and how many days until it happens.
 /////countdownMaker will return a function that,
 /////when invoked, takes one off of the days left and returns an
 /////object that looks like this:
 /////{event: <eventname>, daysLeft: <days left>}
+
+
 
 /////Type Checking/////
 

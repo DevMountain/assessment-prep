@@ -39,9 +39,10 @@ describe('review', function () {
       expect(iPromise().then).toEqual(jasmine.any(Function))
     })
     it('should resolve the promise', function () {
-      expect(iPromise().then(function (response) {
-        return response;
-      })).toEqual(39088169)
+      expect(iPromise).toEqual(jasmine.any(Function));
+      iPromise().then(function (response) {
+        expect(response).toEqual(39088169)
+      })
     })
   })
 
@@ -51,7 +52,7 @@ describe('review', function () {
       var theFunction = function (a, b) {
         return this[a] - this[b];
       }
-      expect(contextIt(theFunction, theContext, fruit, snakes)).toEqual(2);
+      expect(contextIt(theFunction, theContext, 'fruit', 'snakes')).toEqual(2);
     })
   })
 
@@ -62,7 +63,7 @@ describe('review', function () {
       var theFunction = function (a, b) {
         return this[a] - this[b];
       }
-      expect(contextIt2(theFunction, theContext, [fruit, snakes])).toEqual(2);
+      expect(contextIt2(theFunction, theContext, ['fruit', 'snakes'])).toEqual(2);
     })
 
   })
@@ -77,10 +78,10 @@ describe('review', function () {
     }
 
     it('should return a function', function () {
-      expect(contextIt2(theFunction, theContext)).toEqual(jasmine.any(Function));
+      expect(contextIt3(theFunction, theContext)).toEqual(jasmine.any(Function));
     })
     it('should correctly assign context', function () {
-      expect(contextIt2(theFunction, theContext)()).toEqual(theContext.num);
+      expect(contextIt3(theFunction, theContext)()).toEqual(theContext.num);
     })
   })
 
@@ -95,7 +96,7 @@ describe('review', function () {
     it('should make a magical unicorn', function () {
       expect(mcGlitterson.hornColor).toEqual('blue');
       expect(mcGlitterson.magicType).toEqual('good');
-      expect(mcGlitterson.hasOwnProperty(mana)).toBe(true);
+      expect(mcGlitterson.mana).toBeDefined();
       expect(mcGlitterson.canFly).toEqual(true);
     })
     it('should have a method called castBubbleWrapSpell', function () {
@@ -121,7 +122,7 @@ describe('review', function () {
 
 		it('should return a function that takes in a greeting and returns the name plus the greeting',
     function () {
-      expect(greetingMaker('Donald')(' I greet thee.')).toEqual('Donald I greet thee');
+      expect(greetingMaker('Donald')(' I greet thee')).toEqual('Donald I greet thee');
 		});
 
 	});
