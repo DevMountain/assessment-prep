@@ -38,13 +38,13 @@ var ans5 = '';
 /////number in the Fibonacci sequence and resolve the promise
 /////with the answer when it completes.
 /////Fibonacci sequence:
-/////var fibonacci = function(n) {
-//     if(n <= 2) {
-//         return 1;
-//     } else {
-//         return this.recursive(n - 1) + this.recursive(n - 2);
-//     }
-// };
+var fibonacci = function(n) {
+    if(n <= 2) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+};
 
 
 

@@ -38,10 +38,10 @@ describe('review', function () {
     it('should return a promise', function () {
       expect(iPromise().then).toEqual(jasmine.any(Function))
     })
-    it('should resolve the promise', function () {
-      expect(iPromise).toEqual(jasmine.any(Function));
+    it('should resolve the promise', function (done) {
       iPromise().then(function (response) {
         expect(response).toEqual(39088169)
+        done();
       })
     })
   })
