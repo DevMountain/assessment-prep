@@ -102,6 +102,9 @@ describe('review', function () {
     it('should have a method called castBubbleWrapSpell', function () {
       expect(mcGlitterson.castBubbleWrapSpell).toEqual(jasmine.any(Function));
     })
+    it('should have a method called castBubbleWrapSpell on the prototype', function () {
+      expect(mcGlitterson.hasOwnProperty('castBubbleWrapSpell')).toBe(false)
+    })
     it('should cast bubbles and take away mana', function () {
       bubbles = 0;
       mcGlitterson.castBubbleWrapSpell()
