@@ -78,9 +78,11 @@ var bubbles = 0; //Ignore this line except to mourn our lack of bubbles.
 /////canFly; inside the function, assign each to an identically
 /////named property
 
+
+//question updated 03/30/17
 //11. Add a prototype method to Unicorn called castBubbleWrapSpell
 /////which adds 100 to the global variable bubbles and takes away
-/////15 from mana on the unicorn until it hits zero.
+/////15 from mana.
 
 
 
