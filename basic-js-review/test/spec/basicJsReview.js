@@ -12,8 +12,8 @@ describe('review', function () {
   it('should exist, value should be a string', function () {
     expect(myFave).toEqual(jasmine.any(String));
   });
-  it('should equal \'My favorite color is\'', function () {
-    expect(myFave).toEqual('My favorite color is');
+  it('should equal \'My favorite color is \'', function () {
+    expect(myFave).toEqual('My favorite color is ');
   });
 });
 
