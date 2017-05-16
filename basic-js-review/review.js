@@ -1,7 +1,7 @@
 /////////////Variables/////////////
 //1. Write a variable called color with a value of "dark blue".
 
-//2. Write a variable, myFave, that has the value "My favorite color is "
+//2. Write a variable, myFave, that has the value "My favorite color is"
 
 //3. Use the variables from 1 and 2 to make myFavoriteColor equal
 //   "My favorite color is dark blue" (concatenate)
