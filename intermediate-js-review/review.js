@@ -57,7 +57,7 @@ function contextIt(myFn, contextObj, param1, param2) {
 
 }
 
-//8. Do the same as you did in question 6, except with the
+//8. Do the same as you did in question 7, except with the
 /////paramArray passed in instead
 function contextIt2(myFn, contextObj, paramArray) {
 
