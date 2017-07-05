@@ -31,18 +31,34 @@ describe('review', function () {
     });
   });
 
-  describe('iPromise', function () {
-    it('should exist', function () {
-      expect(iPromise).toEqual(jasmine.any(Function));
+  describe("promiseResolver", function(){
+    it("should be a function", function(){
+      expect(promiseResolver).toEqual(jasmine.any(Function))
     })
-    it('should return a promise', function () {
-      expect(iPromise().then).toEqual(jasmine.any(Function))
+    it("should not change the value of theAnswer before the promise is resolved", function(){
+      expect(theAnswer).toEqual("Unknown")
     })
-    it('should resolve the promise', function (done) {
-      iPromise().then(function (response) {
-        expect(response).toEqual(39088169)
-        done();
-      })
+    it("should catch a promise, then set its value to 'theAnswer'", function(done){
+
+      function deepThought ($q){
+        var deferred = $q.defer();
+        setTimeout(function(){
+          var lifeUniverseEverything = 42
+          deferred.resolve(lifeUniverseEverything)
+        }, 200);
+        return deferred.promise
+      }
+
+      promiseResolver(deepThought($q))
+
+        setTimeout(function(){
+          var towel = false
+          if(theAnswer === 42){
+            towel = true
+          }
+          expect(towel).toBe(true)
+          done()
+        }, 500)
     })
   })
 

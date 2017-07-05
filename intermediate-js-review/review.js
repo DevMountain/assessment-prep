@@ -33,19 +33,17 @@ var ans5 = '';
 
 ///Promises///
 
-//6. Write a function called iPromise. Use $q to create
-/////a promise and return the deferred promise. Find the 38th
-/////number in the Fibonacci sequence and resolve the promise
-/////with the answer when it completes.
-/////Fibonacci sequence:
-var fibonacci = function(n) {
-    if(n <= 2) {
-        return 1;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-};
+//6. Resolving a Promise
 
+// Write a function called "promiseResolver" with a single parameter.
+// Jasmine will pass a promise into your function through that parameter.
+// Your function will need to handle that promise.
+// When your promise receives its results, set the variable 'theAnswer' (seen below)
+// equal to the result from resolving the promise.
+
+var theAnswer = "Unknown";
+
+// CODE HERE...
 
 
 ///Context///
