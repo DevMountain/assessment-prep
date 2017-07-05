@@ -59,7 +59,6 @@ describe('review', function () {
           expect(towel).toBe(true)
           done()
         }, 500)
-
     })
   })
 

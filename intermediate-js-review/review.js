@@ -31,7 +31,6 @@ var ans4 = '';
 //5. The value of money if accessed from theTragicHumanitarian
 var ans5 = '';
 
-
 ///Promises///
 
 //6. Resolving a Promise
@@ -43,13 +42,6 @@ var ans5 = '';
 // equal to the result from resolving the promise.
 
 var theAnswer = "Unknown";
-
-function promiseResolver(promise) {
-  promise.then(response => {
-    theAnswer = response;
-    return;
-  })
-}
 
 // CODE HERE...
 
